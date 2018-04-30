@@ -71,7 +71,7 @@ class Editor extends React.Component<undefined, EditorState>
 
                     bot['intents'][intent]['response']['value'] = newVal.value;
                     bot['intents'][intent]['response']['type'] = newType.value;
-                    bot['intents'][intent]['response']['columns'] = newColumns.value.split(',');
+                    bot['intents'][intent]['response']['columns'] = (newColumns.value + '').length > 0 ? newColumns.value.split(','): [];
                     bot['intents'][intent]['response']['filter'] = (newFilter.value + '').length > 0 ? newFilter.value.split(',') : [];
                     bot['intents'][intent]['response']['table'] = newTable.value;
 
